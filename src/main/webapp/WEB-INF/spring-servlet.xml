@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="org.management" />
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          name="viewResolver">
+        <!--        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+        <!--        <property name="exposeContextBeansAsAttributes" value="true"/>-->
+    </bean>
+
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/employeemanagement" />
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate"
+          id="JdbcTemplate">
+        <property name="dataSource" ref="ds" />
+    </bean>
+
+    <bean id="employeeDao" class="org.management.dao.EmployeeDaoImpl" >
+        <property name="JdbcTemplate" ref="JdbcTemplate"/>
+    </bean>
+</beans>
