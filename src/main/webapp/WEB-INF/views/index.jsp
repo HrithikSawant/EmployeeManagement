@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <title>Hello, world!</title>
+    <title>Index</title>
     <style>
         .modal-dialog{
             overflow-y: initial !important
@@ -43,8 +43,8 @@
         </div>
     </div>
 </nav>
-
                         <!----NAVBAR END---->
+
 <section class="container" style="margin-top: 2rem;">
     <div class="row">
         <div class="col-md-12">
